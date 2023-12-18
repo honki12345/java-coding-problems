@@ -47,6 +47,7 @@ public class Prob001 {
      * IntStream은 주어진 무낮열 내 문자를 정수로 표현한다
      * 2. mapToObj() 메서드로 IntStream을 문자 스트림으로 변환한다(이 메서드는 정수표현을 사람이 읽기 쉬운 문자 형태로 변환한다)
      * 3. 끝으로 문자를 분류하고(Collectors.groupingBy()) 센다(collectors.counting())*/
+    // TODO String.chars()가 왜 Stream>Character> 를 반환하지 않고 IntStream을 반환할까?
     public Map<Character, Long> countDuplicateCharacters2(String str) {
         Map<Character, Long> result = str.chars()
                 .mapToObj(c -> (char) c)
