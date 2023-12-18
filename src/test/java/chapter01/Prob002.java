@@ -69,7 +69,7 @@ public class Prob002 {
     }
 
     /*자바8 함수형 스타일: 아스키, 16비트 유니코드, 유니코드 대리쌍을 지원하는 해법*/
-    public static String firstNonRepeatedCharacter(String str) {
+    public static String firstNonRepeatedCharacter3(String str) {
         // mapToOjb: int 에서 Integer로 변환  여기서는 IntStream.boxed()로 해결가능
         Map<Integer, Long> chs = str.codePoints()
             .boxed()
