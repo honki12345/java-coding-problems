@@ -23,6 +23,25 @@ public class Prob001 {
         return result;
     }
 
+    @DisplayName("")
+    @Test
+    void test3() {
+        // Given
+        Map<Character, Integer> map = new HashMap<>();
+        map.put('a', 1);
+        map.put('b', 1);
+        map.put('c', 1);
+
+        // When
+        map.compute('a', (character, integer) -> null);
+        map.compute('b', (character, integer) -> null);
+        map.compute('c', (character, integer) -> null);
+        map.compute('d', (character, integer) -> integer == null ? 1 : null);
+
+        // Then
+        Assertions.assertEquals(map.size(), 1);
+    }
+
     @DisplayName("compute 메서드에서 null로 매핑하면 map 에 저장되지 않는다")
     @Test
     void computeTest() {
@@ -51,6 +70,7 @@ public class Prob001 {
     public Map<Character, Long> countDuplicateCharacters2(String str) {
         Map<Character, Long> result = str.chars()
                 .mapToObj(c -> (char) c)
+                // TODO collect 메서드
                 .collect(Collectors.groupingBy(c -> c, Collectors.counting()));
 
         return result;
