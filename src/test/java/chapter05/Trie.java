@@ -38,6 +38,7 @@ public class Trie {
     }
 
     public boolean delete(String word) {
+        return false;
 
     }
 
